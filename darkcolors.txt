@@ -1,0 +1,1 @@
+sdif --cm OTEXT=NTEXT=fff/ccc --cdif --cdifopts='--cm DELETE=500/000,APPEND=050/000,OCHANGE=440/00f,NCHANGE=044/00f'
