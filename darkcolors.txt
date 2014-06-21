@@ -1,1 +1,2 @@
 sdif --cm OTEXT=NTEXT=fff/ccc --cdif --cdifopts='--cm DELETE=500/000,APPEND=050/000,OCHANGE=440/00f,NCHANGE=044/00f'
+sdif --cm OCOMMAND=OFILE=ffa500DSE,NCOMMAND=NFILE=CDSE,OTEXT=NTEXT=ffff80S --cdif --cdifopts='--cm DELETE=ffcccc/550000,APPEND=ccffcc/005500,OCHANGE=M/ffff00,NCHANGE=C/ffff00' | less -R
