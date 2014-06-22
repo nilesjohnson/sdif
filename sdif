@@ -172,6 +172,23 @@ my %colormap =
 	UTEXT => "",
     );
 
+# override default colormap with config file
+sub trim($);
+my $custom_config="$ENV{'HOME'}".'/.sdif-colormap';
+if (-e $custom_config) {
+    open(CFG,$custom_config);
+    while (<CFG>)
+    {
+	chomp;
+	my ($key, $val) = split /=/;
+	$key = trim($key);
+	$val = trim($val);
+	$colormap{$key} = $val;
+    }
+}
+
+
+
 my $colorize;
 if ($opt_color) {
     if (@opt_colormap) {
@@ -921,6 +938,17 @@ sub color_table {
 	    print "\n";
 	}
     }
+}
+
+##
+## Trim whitespace
+##
+sub trim($)
+{
+	my $string = shift;
+	$string =~ s/^\s+//;
+	$string =~ s/\s+$//;
+	return $string;
 }
 
 __END__
